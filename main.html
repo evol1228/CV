@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Love Ranmar — CV</title>
+<meta name="description" content="Love Ranmar — founder building AI-native products. Creator of Kalvra and Sheetly." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --surface:#F5F5F7;
+    --text:#1D1D1F;
+    --muted:#6E6E73;
+    --hairline:#E8E8ED;
+    --accent1:#0071E3;
+    --grad:linear-gradient(92deg,#0071E3 0%,#7D4CDB 55%,#E64980 100%);
+    --display:'Inter Tight',sans-serif;
+    --body:'Inter',sans-serif;
+    --radius:22px;
+    --shadow:0 8px 40px rgba(0,0,0,.06);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:#0071E3;color:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;
+    backdrop-filter:blur(20px) saturate(1.6);
+    background:rgba(255,255,255,.72);
+    border-bottom:1px solid transparent;transition:border-color .3s}
+  nav.scrolled{border-bottom:1px solid var(--hairline)}
+  .nav-inner{max-width:920px;margin:0 auto;padding:16px 24px;
+    display:flex;justify-content:space-between;align-items:center}
+  .brand{font-weight:600;font-size:15px;letter-spacing:-.01em}
+  .nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  @media(max-width:640px){.nav-links{display:none}}
+
+  /* hero */
+  .hero{min-height:88vh;display:flex;flex-direction:column;
+    justify-content:center;align-items:center;text-align:center;
+    padding:130px 24px 60px}
+  .hello{font-size:15px;font-weight:500;color:var(--muted);margin-bottom:18px;
+    opacity:0;animation:rise .8s .1s forwards}
+  h1{font-family:var(--display);font-weight:800;
+    font-size:clamp(3rem,10vw,6.4rem);line-height:1.02;letter-spacing:-.035em;
+    max-width:900px;opacity:0;animation:rise .8s .25s forwards}
+  h1 .grad{background:var(--grad);-webkit-background-clip:text;
+    background-clip:text;color:transparent}
+  .sub{font-size:clamp(1.05rem,2.4vw,1.35rem);color:var(--muted);
+    max-width:640px;margin-top:26px;font-weight:400;
+    opacity:0;animation:rise .8s .4s forwards}
+  .sub b{color:var(--text);font-weight:600}
+  .hero-cta{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap;justify-content:center;
+    opacity:0;animation:rise .8s .55s forwards}
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .btn{font-size:15px;font-weight:500;padding:13px 26px;border-radius:980px;
+    transition:all .25s;display:inline-flex;align-items:center;gap:8px}
+  .btn.primary{background:var(--text);color:#fff}
+  .btn.primary:hover{transform:scale(1.03);background:#000}
+  .btn.ghost{color:var(--accent1)}
+  .btn.ghost:hover{background:rgba(0,113,227,.06)}
+
+  /* sections */
+  section{padding:100px 0}
+  section.alt{background:var(--surface)}
+  .kicker{font-size:14px;font-weight:600;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+  h2{font-family:var(--display);font-weight:700;
+    font-size:clamp(1.9rem,5vw,2.8rem);letter-spacing:-.025em;line-height:1.1;
+    margin-bottom:44px}
+
+  /* CV experience entries */
+  .entry{display:grid;grid-template-columns:180px 1fr;gap:28px;
+    padding:36px 0;border-top:1px solid var(--hairline)}
+  .entry:last-of-type{border-bottom:1px solid var(--hairline)}
+  @media(max-width:640px){.entry{grid-template-columns:1fr;gap:8px}}
+  .entry .when{font-size:14px;font-weight:500;color:var(--muted);padding-top:4px}
+  .entry h3{font-family:var(--display);font-size:1.35rem;font-weight:700;
+    letter-spacing:-.015em}
+  .entry .role{font-size:14px;font-weight:600;color:var(--accent1);margin-bottom:10px}
+  .entry p{color:var(--muted);font-size:1rem;max-width:600px}
+  .entry ul{margin:12px 0 0 18px;color:var(--muted);font-size:.98rem}
+  .entry li{margin-bottom:6px}
+  .entry li b{color:var(--text);font-weight:600}
+
+  /* skills */
+  .skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  @media(max-width:760px){.skill-groups{grid-template-columns:1fr}}
+  .sg{background:#fff;border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow)}
+  .sg h3{font-family:var(--display);font-size:1.1rem;font-weight:700;
+    letter-spacing:-.01em;margin-bottom:16px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px}
+  .pill{font-size:13px;font-weight:500;color:var(--text);
+    background:var(--surface);padding:7px 14px;border-radius:980px}
+
+  /* contact */
+  .contact{text-align:center;padding:120px 24px}
+  .contact h2{margin-bottom:14px}
+  .contact p{color:var(--muted);font-size:1.1rem;max-width:560px;margin:0 auto 36px}
+  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  footer{border-top:1px solid var(--hairline);padding:34px 0;
+    font-size:13px;color:var(--muted)}
+  .foot-inner{max-width:920px;margin:0 auto;padding:0 24px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  .reveal{opacity:0;transform:translateY(22px);
+    transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .hello,h1,.sub,.hero-cta,.reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="brand">Love Ranmar</div>
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hello">Hi, I'm Love Ranmar.</div>
+  <h1>I build AI products<br>that feel like <span class="grad">magic.</span></h1>
+  <p class="sub">Founder of <b>Kalvra</b> and <b>Sheetly</b>. I take hard AI problems and turn them into products people actually love to use — designed, engineered, and shipped end to end. <b>I'm 13.</b></p>
+  <div class="hero-cta">
+    <a href="#experience" class="btn primary">Experience</a>
+    <a href="#contact" class="btn ghost">Get in touch →</a>
+  </div>
+</header>
+
+<main>
+<section id="experience">
+  <div class="wrap">
+    <div class="kicker reveal">Experience</div>
+    <h2 class="reveal">What I've built.</h2>
+
+    <article class="entry reveal">
+      <div class="when">2026 — Present</div>
+      <div>
+        <h3>Kalvra</h3>
+        <div class="role">Founder</div>
+        <p>Kalvra builds custom AI solutions for businesses — specializing in AI receptionists that answer every call, every time, and are purpose-built around each company's exact needs.</p>
+        <ul>
+          <li><b>AI reception</b> — an always-available receptionist tailored to the business it serves, not a one-size-fits-all bot.</li>
+          <li>Beyond reception: bespoke AI solutions designed around whatever a company needs automated.</li>
+          <li><b>Sole founder and owner</b> — concept, architecture, design, and engineering, all built from scratch by me.</li>
+          <li>Currently in active development toward launch.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry reveal">
+      <div class="when">2026 — Present</div>
+      <div>
+        <h3>Sheetly</h3>
+        <div class="role">Founder &amp; builder</div>
+        <p>An AI companion for musicians: point it at any sheet music and it reads the notation, plays it back, and coaches you through learning it.</p>
+        <ul>
+          <li>Sole founder — built the full stack from scratch: <b>optical music recognition</b>, MusicXML/MIDI processing, <b>real-time audio synthesis</b>, and an AI practice coach.</li>
+          <li>Designed the product, brand, and onboarding — from first sketch to App Store-ready iOS app.</li>
+          <li>Grounded in a real musician's problem: I've played trombone for 5+ years, and built the tool I always wanted.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="skills" class="alt">
+  <div class="wrap">
+    <div class="kicker reveal">Skills</div>
+    <h2 class="reveal">What I bring.</h2>
+    <div class="skill-groups">
+      <div class="sg reveal">
+        <h3>Applied AI</h3>
+        <div class="pills">
+          <span class="pill">LLM integration</span>
+          <span class="pill">Prompt engineering</span>
+          <span class="pill">AI agents &amp; MCP</span>
+          <span class="pill">AI-assisted development</span>
+        </div>
+      </div>
+      <div class="sg reveal">
+        <h3>Product</h3>
+        <div class="pills">
+          <span class="pill">Product design</span>
+          <span class="pill">UI/UX</span>
+          <span class="pill">Branding</span>
+          <span class="pill">Onboarding &amp; conversion</span>
+        </div>
+      </div>
+      <div class="sg reveal">
+        <h3>Building &amp; shipping</h3>
+        <div class="pills">
+          <span class="pill">iOS / mobile</span>
+          <span class="pill">Backend &amp; APIs</span>
+          <span class="pill">Cloud infrastructure</span>
+          <span class="pill">Linux</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="kicker reveal">Contact</div>
+    <h2 class="reveal">Let's talk.</h2>
+    <p class="reveal">Working on something ambitious in AI — or looking for someone who ships? I'd love to hear about it.</p>
+    <div class="contact-links reveal">
+      <a href="mailto:hello@example.com" class="btn primary">Email me</a>
+      <a href="#" class="btn ghost">LinkedIn →</a>
+      <a href="#" class="btn ghost">GitHub →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div>Love Ranmar</div>
+    <div>© 2026 — designed &amp; built by me.</div>
+  </div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
